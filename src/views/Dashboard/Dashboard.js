@@ -23,6 +23,9 @@ import {
 import { CustomTooltips } from '@coreui/coreui-plugin-chartjs-custom-tooltips';
 import { getStyle, hexToRgba } from '@coreui/coreui/dist/js/coreui-utilities'
 
+import { clDarkBlue } from '../../utils/colors'
+import ScheduleCalendar from '../../components/generals/ScheduleCalendar';
+
 const Widget03 = lazy(() => import('../../views/Widgets/Widget03'));
 
 const brandPrimary = getStyle('--primary')
@@ -452,6 +455,23 @@ const mainChartOpts = {
   },
 };
 
+const events = [
+  {
+      start: '2015-07-20',
+      end: '2015-07-02',
+      eventClasses: 'optionalEvent',
+      title: 'test event',
+      description: 'This is a test description of an event',
+  },
+  {
+      start: '2015-07-19',
+      end: '2015-07-25',
+      title: 'test event',
+      description: 'This is a test description of an event',
+      data: 'you can add what ever random data you may want to use later',
+  },
+];
+
 class Dashboard extends Component {
   constructor(props) {
     super(props);
@@ -485,9 +505,9 @@ class Dashboard extends Component {
       <div className="animated fadeIn">
         <Row>
           <Col xs="12" sm="6" lg="3">
-            <Card className="text-white bg-info">
+            <Card className="text-white" style={{backgroundColor:clDarkBlue}}>
               <CardBody className="pb-0">
-                <ButtonGroup className="float-right">
+                {/* <ButtonGroup className="float-right">
                   <ButtonDropdown id='card1' isOpen={this.state.card1} toggle={() => { this.setState({ card1: !this.state.card1 }); }}>
                     <DropdownToggle caret className="p-0" color="transparent">
                       <i className="icon-settings"></i>
@@ -499,9 +519,9 @@ class Dashboard extends Component {
                       <DropdownItem>Something else here</DropdownItem>
                     </DropdownMenu>
                   </ButtonDropdown>
-                </ButtonGroup>
+                </ButtonGroup> */}
                 <div className="text-value">9.823</div>
-                <div>Members online</div>
+                <div>Total Student</div>
               </CardBody>
               <div className="chart-wrapper mx-3" style={{ height: '70px' }}>
                 <Line data={cardChartData2} options={cardChartOpts2} height={70} />
@@ -512,7 +532,7 @@ class Dashboard extends Component {
           <Col xs="12" sm="6" lg="3">
             <Card className="text-white bg-primary">
               <CardBody className="pb-0">
-                <ButtonGroup className="float-right">
+                {/* <ButtonGroup className="float-right">
                   <Dropdown id='card2' isOpen={this.state.card2} toggle={() => { this.setState({ card2: !this.state.card2 }); }}>
                     <DropdownToggle className="p-0" color="transparent">
                       <i className="icon-location-pin"></i>
@@ -523,9 +543,9 @@ class Dashboard extends Component {
                       <DropdownItem>Something else here</DropdownItem>
                     </DropdownMenu>
                   </Dropdown>
-                </ButtonGroup>
-                <div className="text-value">9.823</div>
-                <div>Members online</div>
+                </ButtonGroup> */}
+                <div className="text-value">8.763</div>
+                <div>Total Attendance</div>
               </CardBody>
               <div className="chart-wrapper mx-3" style={{ height: '70px' }}>
                 <Line data={cardChartData1} options={cardChartOpts1} height={70} />
@@ -536,7 +556,7 @@ class Dashboard extends Component {
           <Col xs="12" sm="6" lg="3">
             <Card className="text-white bg-warning">
               <CardBody className="pb-0">
-                <ButtonGroup className="float-right">
+                {/* <ButtonGroup className="float-right">
                   <Dropdown id='card3' isOpen={this.state.card3} toggle={() => { this.setState({ card3: !this.state.card3 }); }}>
                     <DropdownToggle caret className="p-0" color="transparent">
                       <i className="icon-settings"></i>
@@ -547,9 +567,9 @@ class Dashboard extends Component {
                       <DropdownItem>Something else here</DropdownItem>
                     </DropdownMenu>
                   </Dropdown>
-                </ButtonGroup>
-                <div className="text-value">9.823</div>
-                <div>Members online</div>
+                </ButtonGroup> */}
+                <div className="text-value">5</div>
+                <div>Total Staff</div>
               </CardBody>
               <div className="chart-wrapper" style={{ height: '70px' }}>
                 <Line data={cardChartData3} options={cardChartOpts3} height={70} />
@@ -560,7 +580,7 @@ class Dashboard extends Component {
           <Col xs="12" sm="6" lg="3">
             <Card className="text-white bg-danger">
               <CardBody className="pb-0">
-                <ButtonGroup className="float-right">
+                {/* <ButtonGroup className="float-right">
                   <ButtonDropdown id='card4' isOpen={this.state.card4} toggle={() => { this.setState({ card4: !this.state.card4 }); }}>
                     <DropdownToggle caret className="p-0" color="transparent">
                       <i className="icon-settings"></i>
@@ -571,9 +591,9 @@ class Dashboard extends Component {
                       <DropdownItem>Something else here</DropdownItem>
                     </DropdownMenu>
                   </ButtonDropdown>
-                </ButtonGroup>
+                </ButtonGroup> */}
                 <div className="text-value">9.823</div>
-                <div>Members online</div>
+                <div>Total members</div>
               </CardBody>
               <div className="chart-wrapper mx-3" style={{ height: '70px' }}>
                 <Bar data={cardChartData4} options={cardChartOpts4} height={70} />
@@ -581,14 +601,24 @@ class Dashboard extends Component {
             </Card>
           </Col>
         </Row>
-        {/* <Row>
+        <Row>
+          <Col>
+            <Card>
+              <CardHeader>Event Schedule</CardHeader>
+              <CardBody>
+                <ScheduleCalendar events={events}></ScheduleCalendar>
+              </CardBody>
+            </Card>
+          </Col>
+        </Row>
+        <Row>
           <Col>
             <Card>
               <CardBody>
                 <Row>
                   <Col sm="5">
-                    <CardTitle className="mb-0">Traffic</CardTitle>
-                    <div className="small text-muted">November 2015</div>
+                    <CardTitle className="mb-0">Chart</CardTitle>
+                    <div className="small text-muted">January 2020</div>
                   </Col>
                   <Col sm="7" className="d-none d-sm-inline-block">
                     <Button color="primary" className="float-right"><i className="icon-cloud-download"></i></Button>
