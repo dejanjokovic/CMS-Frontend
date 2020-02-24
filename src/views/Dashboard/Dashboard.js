@@ -504,6 +504,12 @@ class Dashboard extends Component {
     return (
       <div className="animated fadeIn">
         <Row>
+          <Col xs="12" sm="12" lg="12">
+            <h2 style={{color:"grey"}}>Admin Dashboard</h2>
+          </Col>
+        </Row>
+        <div style={{height:30}}></div>
+        <Row>
           <Col xs="12" sm="6" lg="3">
             <Card className="text-white" style={{backgroundColor:clDarkBlue}}>
               <CardBody className="pb-0">

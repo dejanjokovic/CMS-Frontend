@@ -7,7 +7,7 @@ export default {
     },
     {
       name: 'Front Office',
-      url: '/frontoffice',
+      url: '/frontoffice/prospectus_sale',
       icon: 'icon-list',
       children: [
         {

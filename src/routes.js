@@ -1,4 +1,11 @@
 import React from 'react';
+import ProspectusSale from './views/FrontOffice/ProspectusSale';
+import Visitors from './views/FrontOffice/Visitors';
+import Calls from './views/FrontOffice/Calling';
+import GeneralEnquery from './views/FrontOffice/GeneralEnquery';
+import CourierSend from './views/FrontOffice/CourierService/CourierSend'
+import CourierReceived from './views/FrontOffice/CourierService/CourierReceived'
+import CalendarPlanning from './views/FrontOffice/CalendarPlanning';
 
 const Breadcrumbs = React.lazy(() => import('./views/Base/Breadcrumbs'));
 const Cards = React.lazy(() => import('./views/Base/Cards'));
@@ -35,6 +42,7 @@ const Typography = React.lazy(() => import('./views/Theme/Typography'));
 const Widgets = React.lazy(() => import('./views/Widgets/Widgets'));
 const Users = React.lazy(() => import('./views/Users/Users'));
 const User = React.lazy(() => import('./views/Users/User'));
+// Add new
 
 const routes = [
   { path: '/', exact: true, name: 'Home' },
@@ -78,6 +86,14 @@ const routes = [
   { path: '/charts', name: 'Charts', component: Charts },
   { path: '/users', exact: true,  name: 'Users', component: Users },
   { path: '/users/:id', exact: true, name: 'User Details', component: User },
+  // Added New
+  { path: '/frontoffice/prospectus_sale', exact: true, name: 'Prospectus Sale', component: ProspectusSale },
+  { path: '/frontoffice/visitors', exact: true, name: 'Visitors', component: Visitors },
+  { path: '/frontoffice/calls', exact: true, name: 'Calls', component: Calls },
+  { path: '/frontoffice/general_enquiry', exact: true, name: 'GeneralEnquery', component: GeneralEnquery},
+  { path: '/frontoffice/courier_send', exact: true, name: 'CourierSend', component: CourierSend},
+  { path: '/frontoffice/courier_received', exact: true, name: 'CourierReceived', component: CourierReceived},
+  { path: '/frontoffice/calendar_planning', exact: true, name: 'CalendarPlanning', component: CalendarPlanning},
 ];
 
 export default routes;
