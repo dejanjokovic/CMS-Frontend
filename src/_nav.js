@@ -71,7 +71,7 @@ export default {
         },
         {
           name: 'Monthwise Attendance Report',
-          url: '/staff/report',
+          url: '/staff/monthreport',
           icon: '',
         },
         {

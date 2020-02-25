@@ -6,6 +6,12 @@ import GeneralEnquery from './views/FrontOffice/GeneralEnquery';
 import CourierSend from './views/FrontOffice/CourierService/CourierSend'
 import CourierReceived from './views/FrontOffice/CourierService/CourierReceived'
 import CalendarPlanning from './views/FrontOffice/CalendarPlanning';
+import Registration from './views/Staff/Registration';
+import ManageAttendance from './views/Staff/ManageAttendance';
+import MonthwiseAttendanceReport from './views/Staff/MonthwiseAttendanceReport';
+import StaffRelieving from './views/Staff/StaffRelieving';
+import StaffRelievingReport from './views/Staff/StaffRelievingReport';
+import ManageStaffPayroll from './views/Staff/ManageStaffPayroll';
 
 const Breadcrumbs = React.lazy(() => import('./views/Base/Breadcrumbs'));
 const Cards = React.lazy(() => import('./views/Base/Cards'));
@@ -94,6 +100,12 @@ const routes = [
   { path: '/frontoffice/courier_send', exact: true, name: 'CourierSend', component: CourierSend},
   { path: '/frontoffice/courier_received', exact: true, name: 'CourierReceived', component: CourierReceived},
   { path: '/frontoffice/calendar_planning', exact: true, name: 'CalendarPlanning', component: CalendarPlanning},
+  { path: '/staff/registration', exact: true, name: 'StaffRegistration', component: Registration},
+  { path: '/staff/manage_attendance', exact: true, name: 'ManageAttendance', component: ManageAttendance},
+  { path: '/staff/monthreport', exact: true, name: 'MonthlyManageAttendance', component: MonthwiseAttendanceReport},
+  { path: '/staff/relieving', exact: true, name: 'StaffRelieving', component: StaffRelieving},
+  { path: '/staff/relieving_report', exact: true, name: 'StaffRelievingRport', component: StaffRelievingReport},
+  { path: '/staff/payroll', exact: true, name: 'StaffRelievingRport', component: ManageStaffPayroll},
 ];
 
 export default routes;
