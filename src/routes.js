@@ -13,6 +13,7 @@ import StaffRelieving from './views/Staff/StaffRelieving';
 import StaffRelievingReport from './views/Staff/StaffRelievingReport';
 import ManageStaffPayroll from './views/Staff/ManageStaffPayroll';
 import AdmitStudent from './views/Students/AdmitStudent';
+import ApplicationForm from './views/Students/Application/ApplicationForm'
 
 const Breadcrumbs = React.lazy(() => import('./views/Base/Breadcrumbs'));
 const Cards = React.lazy(() => import('./views/Base/Cards'));
@@ -108,6 +109,7 @@ const routes = [
   { path: '/staff/relieving_report', exact: true, name: 'StaffRelievingRport', component: StaffRelievingReport},
   { path: '/staff/payroll', exact: true, name: 'StaffRelievingRport', component: ManageStaffPayroll},
   { path: '/student/admit', exact: true, name: 'AdmitStudent', component: AdmitStudent},
+  { path: '/student/application/form', exact: true, name: 'ApplicationForm', component: ApplicationForm},
 ];
 
 export default routes;

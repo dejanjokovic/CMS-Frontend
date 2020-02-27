@@ -103,7 +103,7 @@ export default {
         },
         {
           name: 'Application',
-          url: '/student/application',
+          url: '/student/application/form',
           icon: '',
           children:[
             {
