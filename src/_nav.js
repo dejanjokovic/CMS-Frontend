@@ -125,12 +125,12 @@ export default {
         },
         {
           name: 'Student Information',
-          url: '/student/information',
+          url: '/student/information/info',
           icon: '',
           children:[
             {
               name: "B.Com with CA (0)",
-              url: '/student/information/',
+              url: '/student/information/info',
               icon:''
             },
             {
@@ -181,6 +181,18 @@ export default {
           name: 'Student Daily Report',
           url: '/student/daily_report',
           icon: '',
+          children:[
+            {
+              name: 'Add Student Daily Report',
+              url:'/student/daily_report/add',
+              icon: '',
+            },
+            {
+              name: 'View Student Daily Report',
+              url:'/student/daily_report/view',
+              icon: '',
+            },
+          ]
         },
         {
           name: 'Student Discipline',

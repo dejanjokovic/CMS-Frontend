@@ -14,6 +14,22 @@ import StaffRelievingReport from './views/Staff/StaffRelievingReport';
 import ManageStaffPayroll from './views/Staff/ManageStaffPayroll';
 import AdmitStudent from './views/Students/AdmitStudent';
 import ApplicationForm from './views/Students/Application/ApplicationForm'
+import StudentDetails from './views/Students/Application/StudentDetails'
+import CourseWiseRankList from './views/Students/Application/CourseWiseRankList'
+import StudentInformation from './views/Students/StudentInformation/StudentInformation';
+import ManageDailyAttandance from './views/Students/Attendance/ManageDailyAttendance';
+import BulkReport from './views/Students/Attendance/BulkReport';
+import IndividualReport from './views/Students/Attendance/IndividualReport';
+import AddStudentDailyReport from './views/Students/StudentDailyReport/AddStudentDailyReport';
+import ViewStudentDailyReport from './views/Students/StudentDailyReport/ViewStudentDailyReport';
+import StudentDisipline from './views/Students/StudentDisipline';
+import ManageStudentPromotion from './views/Students/StudentPromotion';
+import DepartmentDetails from './views/Department/DepartmentDetails';
+import CourseDetails from './views/Department/CourseDetails';
+import FeeDetails from './views/Department/FeeDetails';
+import SubjectDetails from './views/Department/SubjectDetails';
+import ExamGrades from './views/Examination/ExamGrades';
+import MarkEntry from './views/Examination/MarkEntry';
 
 const Breadcrumbs = React.lazy(() => import('./views/Base/Breadcrumbs'));
 const Cards = React.lazy(() => import('./views/Base/Cards'));
@@ -110,6 +126,22 @@ const routes = [
   { path: '/staff/payroll', exact: true, name: 'StaffRelievingRport', component: ManageStaffPayroll},
   { path: '/student/admit', exact: true, name: 'AdmitStudent', component: AdmitStudent},
   { path: '/student/application/form', exact: true, name: 'ApplicationForm', component: ApplicationForm},
+  { path: '/student/application/details', exact: true, name: 'StudentDetails', component: StudentDetails},
+  { path: '/student/application/ranklist', exact: true, name: 'CourseWiseRankList', component: CourseWiseRankList},
+  { path: '/student/information/info', exact: true, name: 'StudentInformation', component: StudentInformation},
+  { path: '/student/attendance/manage', exact: true, name: 'ManageDailyAttandance', component: ManageDailyAttandance},
+  { path: '/student/attendance/bulk_report', exact: true, name: 'BulkReport', component: BulkReport},
+  { path: '/student/attendance/ind_report', exact: true, name: 'IndividualReport', component: IndividualReport},
+  { path: '/student/daily_report/add', exact: true, name: 'AddStudentDailyReport', component: AddStudentDailyReport},
+  { path: '/student/daily_report/view', exact: true, name: 'ViewStudentDailyReport', component: ViewStudentDailyReport},
+  { path: '/student/discipline', exact: true, name: 'StudentDisipline', component: StudentDisipline},
+  { path: '/student/promotion', exact: true, name: 'ManageStudentPromotion', component: ManageStudentPromotion},
+  { path: '/department/details', exact: true, name: 'DepartmentDetails', component: DepartmentDetails},
+  { path: '/department/course', exact: true, name: 'CourseDetails', component: CourseDetails},
+  { path: '/department/fees', exact: true, name: 'FeeDetails', component: FeeDetails},
+  { path: '/department/subject', exact: true, name: 'SubjectDetails', component: SubjectDetails},
+  { path: '/exam/grades', exact: true, name: 'ExamGrades', component: ExamGrades},
+  { path: '/exam/mark_entry', exact: true, name: 'MarkEntry', component: MarkEntry},
 ];
 
 export default routes;

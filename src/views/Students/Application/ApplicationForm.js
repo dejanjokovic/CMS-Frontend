@@ -70,6 +70,27 @@ const GenderList = [
     {Name:"Male", Id:"1"},
     {Name:"Female", Id:"2"},
 ]
+
+const TrueFalse = [
+    {label:"True", value:true},
+    {label:"False", value:false}
+]
+
+const NumberList = [
+    {label:"1", value:1},
+    {label:"2", value:2},
+    {label:"3", value:3},
+    {label:"4", value:4},
+    {label:"5", value:5},
+]
+
+const GradeList = [
+    {label:"Grade 1", value:1},
+    {label:"Grade 2", value:2},
+    {label:"Grade 3", value:3},
+    {label:"Grade 4", value:4},
+    {label:"Grade 5", value:5},
+]
 class ApplicationForm extends Component {
     constructor(props) {
         super(props);
@@ -87,11 +108,14 @@ class ApplicationForm extends Component {
             DivisionList:[],
             LanguageList:[],
             GenderList:[],
+            TrueFalse:[],
+            NumberList:[],
+            GradeList:[],
         };
     }
 
     componentDidMount(){
-        this.setState({DepartmentList, CourseList, SemisterList, DivisionList, LanguageList, GenderList})
+        this.setState({DepartmentList, CourseList, SemisterList, DivisionList, LanguageList, GenderList, TrueFalse, NumberList, GradeList})
     }
 
     toggle() {this.setState({ collapse: !this.state.collapse });}
@@ -258,15 +282,42 @@ class ApplicationForm extends Component {
                                 </FormGroup>
                                 <FormGroup row>
                                     <Col md="3">
-                                        <Label htmlFor="Department">Department</Label>
+                                        <Label htmlFor="parphone-input">Mobile no of the Student</Label>
                                     </Col>
                                     <Col xs="12" md="9">
-                                        <Input type="select" name="Department" id="Department">
+                                        <Input type="tel" id="parphone-input" name="parphone-input" placeholder="Phone Number" />
+                                        {/* <FormText color="danger">Parent Phone is required</FormText> */}
+                                    </Col>
+                                </FormGroup>
+                                <FormGroup row>
+                                    <Col md="3">
+                                        <Label htmlFor="FatherOcc-input">Occupation of the Parent/Guardian</Label>
+                                    </Col>
+                                    <Col xs="12" md="9">
+                                        <Input type="text" id="FatherOcc-input" name="FatherOcc-input" placeholder="Occupation of the Parent/Guardian" />
+                                        {/* <FormText color="danger">Father's Occupation is required</FormText> */}
+                                    </Col>
+                                </FormGroup>
+                                <FormGroup row>
+                                    <Col md="3">
+                                        <Label htmlFor="FatherOcc-input">Annual Income</Label>
+                                    </Col>
+                                    <Col xs="12" md="9">
+                                        <Input type="text" id="FatherOcc-input" name="FatherOcc-input" placeholder="Annual Income" />
+                                        {/* <FormText color="danger">Father's Occupation is required</FormText> */}
+                                    </Col>
+                                </FormGroup>
+                                <FormGroup row>
+                                    <Col md="3">
+                                        <Label htmlFor="TrueFalse">Whether A Resident Of Kerala</Label>
+                                    </Col>
+                                    <Col xs="12" md="9">
+                                        <Input type="select" name="TrueFalse" id="TrueFalse">
                                             <option value="0">Please select</option>
                                             {
-                                                this.state.DepartmentList.map((item, index)=>{
+                                                this.state.TrueFalse.map((item, index)=>{
                                                     return(
-                                                        <option value={item.Id}>{item.Name}</option>
+                                                        <option value={item.value}>{item.label}</option>
                                                     )
                                                 })
                                             }
@@ -275,15 +326,60 @@ class ApplicationForm extends Component {
                                 </FormGroup>
                                 <FormGroup row>
                                     <Col md="3">
-                                        <Label htmlFor="Course">Course</Label>
+                                        <Label htmlFor="Taluk-input">Taluk</Label>
                                     </Col>
                                     <Col xs="12" md="9">
-                                        <Input type="select" name="Course" id="Course">
-                                            <option value="0">Please course</option>
+                                        <Input type="text" id="Taluk-input" name="Taluk-input" placeholder="Taluk" />
+                                        {/* <FormText color="danger">Father's Occupation is required</FormText> */}
+                                    </Col>
+                                </FormGroup>
+                                <FormGroup row>
+                                    <Col md="3">
+                                        <Label htmlFor="District-input">District</Label>
+                                    </Col>
+                                    <Col xs="12" md="9">
+                                        <Input type="text" id="District-input" name="District-input" placeholder="District" />
+                                        {/* <FormText color="danger">Father's Occupation is required</FormText> */}
+                                    </Col>
+                                </FormGroup>
+                                <FormGroup row>
+                                    <Col md="3">
+                                        <Label htmlFor="Institution-input">Name Of Institution</Label>
+                                    </Col>
+                                    <Col xs="12" md="9">
+                                        <Input type="text" id="Institution-input" name="Institution-input" placeholder="Institution" />
+                                        {/* <FormText color="danger">Father's Occupation is required</FormText> */}
+                                    </Col>
+                                </FormGroup>
+                                <FormGroup row>
+                                    <Col md="3">
+                                        <Label htmlFor="AcademicStudy-input">Academic year of study</Label>
+                                    </Col>
+                                    <Col xs="12" md="9">
+                                        <Input type="text" id="AcademicStudy-input" name="AcademicStudy-input" placeholder="Academic year of study" />
+                                        {/* <FormText color="danger">Father's Occupation is required</FormText> */}
+                                    </Col>
+                                </FormGroup>
+                                <FormGroup row>
+                                    <Col md="3">
+                                        <Label htmlFor="regnumexam-input">Register number of the examination passed</Label>
+                                    </Col>
+                                    <Col xs="12" md="9">
+                                        <Input type="text" id="regnumexam-input" name="regnumexam-input" placeholder="Register number" />
+                                        {/* <FormText color="danger">Father's Occupation is required</FormText> */}
+                                    </Col>
+                                </FormGroup>
+                                <FormGroup row>
+                                    <Col md="3">
+                                        <Label htmlFor="passedfailed-input">If the student passed or failed in Plus two</Label>
+                                    </Col>
+                                    <Col xs="12" md="9">
+                                        <Input type="select" name="TrueFalse" id="TrueFalse">
+                                            <option value="0">Please select</option>
                                             {
-                                                this.state.CourseList.map((item, index)=>{
+                                                this.state.TrueFalse.map((item, index)=>{
                                                     return(
-                                                        <option value={item.Id}>{item.Name}</option>
+                                                        <option value={item.value}>{item.label}</option>
                                                     )
                                                 })
                                             }
@@ -292,15 +388,15 @@ class ApplicationForm extends Component {
                                 </FormGroup>
                                 <FormGroup row>
                                     <Col md="3">
-                                        <Label htmlFor="Semister">Semister/Year</Label>
+                                        <Label htmlFor="passedfailed-input">Number of chances taken for passing examination</Label>
                                     </Col>
                                     <Col xs="12" md="9">
-                                        <Input type="select" name="Semister" id="Semister">
-                                            <option value="0">Please semister</option>
+                                        <Input type="select" name="TrueFalse" id="TrueFalse">
+                                            <option value="0">Please select</option>
                                             {
-                                                this.state.SemisterList.map((item, index)=>{
+                                                this.state.NumberList.map((item, index)=>{
                                                     return(
-                                                        <option value={item.Id}>{item.Name}</option>
+                                                        <option value={item.value}>{item.label}</option>
                                                     )
                                                 })
                                             }
@@ -309,146 +405,191 @@ class ApplicationForm extends Component {
                                 </FormGroup>
                                 <FormGroup row>
                                     <Col md="3">
-                                        <Label htmlFor="Division">Division</Label>
+                                        <Label>Are you the participant of NCC or NSS</Label>
                                     </Col>
                                     <Col xs="12" md="9">
-                                        <Input type="select" name="Division" id="Division">
-                                            <option value="0">Please division</option>
+                                        <Input type="select" name="TrueFalseparticipant" id="TrueFalseparticipant">
+                                            <option value="0">Please select</option>
                                             {
-                                                this.state.DivisionList.map((item, index)=>{
+                                                this.state.TrueFalse.map((item, index)=>{
                                                     return(
-                                                        <option value={item.Id}>{item.Name}</option>
+                                                        <option value={item.value}>{item.label}</option>
                                                     )
                                                 })
                                             }
                                         </Input>
                                     </Col>
                                 </FormGroup>
+
                                 <FormGroup row>
                                     <Col md="3">
-                                        <Label htmlFor="SecondLanguage">Second Language</Label>
+                                        <Label>Have you represented National/State/University in Sports or Games</Label>
                                     </Col>
                                     <Col xs="12" md="9">
-                                        <Input type="select" name="SecondLanguage" id="SecondLanguage">
-                                            <option value="0">Please second language</option>
+                                        <Input type="select" name="TrueFalsesports" id="TrueFalsesports">
+                                            <option value="0">Please select</option>
                                             {
-                                                this.state.LanguageList.map((item, index)=>{
+                                                this.state.TrueFalse.map((item, index)=>{
                                                     return(
-                                                        <option value={item.Id}>{item.Name}</option>
+                                                        <option value={item.value}>{item.label}</option>
                                                     )
                                                 })
                                             }
                                         </Input>
                                     </Col>
                                 </FormGroup>
+
                                 <FormGroup row>
                                     <Col md="3">
-                                        <Label htmlFor="Name-input">Name</Label>
+                                        <Label>Are you a physically handicapped people</Label>
                                     </Col>
                                     <Col xs="12" md="9">
-                                        <Input type="text" id="Name-input" name="Name-input" placeholder="Name" />
-                                        <FormText color="danger">Name is required</FormText>
+                                        <Input type="select" name="TrueFalsehandicapped" id="TrueFalsehandicapped">
+                                            <option value="0">Please select</option>
+                                            {
+                                                this.state.TrueFalse.map((item, index)=>{
+                                                    return(
+                                                        <option value={item.value}>{item.label}</option>
+                                                    )
+                                                })
+                                            }
+                                        </Input>
+                                    </Col>
+                                </FormGroup>
+
+                                <FormGroup row>
+                                    <Col md="3">
+                                        <Label>Are you a children of EX Service man</Label>
+                                    </Col>
+                                    <Col xs="12" md="9">
+                                        <Input type="select" name="TrueFalseexservice" id="TrueFalseexservice">
+                                            <option value="0">Please select</option>
+                                            {
+                                                this.state.TrueFalse.map((item, index)=>{
+                                                    return(
+                                                        <option value={item.value}>{item.label}</option>
+                                                    )
+                                                })
+                                            }
+                                        </Input>
+                                    </Col>
+                                </FormGroup>
+
+                                <FormGroup row>
+                                    <Col md="3">
+                                        <Label> Residence proposed whether in College hostel/ with parent or guardian any other place(give exact location)</Label>
+                                    </Col>
+                                    <Col xs="12" md="9">
+                                        <Input type="text" id="exactlocation-input" name="exactlocation-input" placeholder="Location" />
+                                        {/* <FormText color="danger">Father's Occupation is required</FormText> */}
+                                    </Col>
+                                </FormGroup>
+                                <FormGroup row>
+                                    <Col md="4">
+                                        <Label color="grey">Courses To Which Admission Is Sought</Label>
+                                    </Col>
+                                    <Col xs="12" md="8">
+                                        {/* <Input type="text" id="exactlocation-input" name="exactlocation-input" placeholder="Location" /> */}
+                                        {/* <FormText color="danger">Father's Occupation is required</FormText> */}
                                     </Col>
                                 </FormGroup>
                                 <FormGroup row>
                                     <Col md="3">
-                                        <Label htmlFor="UniversityRegisterNumber-input">University Register Number</Label>
+                                        <Label>First Preference</Label>
                                     </Col>
                                     <Col xs="12" md="9">
-                                        <Input type="text" id="UniversityRegisterNumber-input" name="UniversityRegisterNumber-input" placeholder="University Register Number" />
-                                        <FormText color="danger">University Register Number is required</FormText>
+                                        <Input type="select" name="FirstPreference" id="FirstPreference">
+                                            <option value="0">Please select</option>
+                                            {
+                                                this.state.TrueFalse.map((item, index)=>{
+                                                    return(
+                                                        <option value={item.value}>{item.label}</option>
+                                                    )
+                                                })
+                                            }
+                                        </Input>
                                     </Col>
-                                </FormGroup>
+                                </FormGroup>  
                                 <FormGroup row>
                                     <Col md="3">
-                                        <Label htmlFor="Address-input">Address</Label>
+                                        <Label>Second Preference</Label>
                                     </Col>
                                     <Col xs="12" md="9">
-                                        <Input type="text" id="Address-input" name="Address-input" placeholder="Address" />
-                                        <FormText color="danger">Address is required</FormText>
+                                        <Input type="select" name="SecondPreference" id="SecondPreference">
+                                            <option value="0">Please select</option>
+                                            {
+                                                this.state.TrueFalse.map((item, index)=>{
+                                                    return(
+                                                        <option value={item.value}>{item.label}</option>
+                                                    )
+                                                })
+                                            }
+                                        </Input>
                                     </Col>
-                                </FormGroup>                                
+                                </FormGroup>  
                                 <FormGroup row>
                                     <Col md="3">
-                                        <Label htmlFor="Father-input">Father</Label>
+                                        <Label>Third Preference</Label>
                                     </Col>
                                     <Col xs="12" md="9">
-                                        <Input type="text" id="Father-input" name="Father-input" placeholder="Father Name" />
-                                        <FormText color="danger">Father name is required</FormText>
+                                        <Input type="select" name="ThridPreference" id="ThridPreference">
+                                            <option value="0">Please select</option>
+                                            {
+                                                this.state.TrueFalse.map((item, index)=>{
+                                                    return(
+                                                        <option value={item.value}>{item.label}</option>
+                                                    )
+                                                })
+                                            }
+                                        </Input>
                                     </Col>
-                                </FormGroup>
+                                </FormGroup>  
                                 <FormGroup row>
                                     <Col md="3">
-                                        <Label htmlFor="FatherOcc-input">Father's Occupation</Label>
+                                        <Label>Language Under Part-II</Label>
                                     </Col>
                                     <Col xs="12" md="9">
-                                        <Input type="text" id="FatherOcc-input" name="FatherOcc-input" placeholder="Father's Occupation" />
-                                        <FormText color="danger">Father's Occupation is required</FormText>
+                                        <Input type="select" name="LanguageUnderPart2" id="LanguageUnderPart2">
+                                            <option value="0">Please select</option>
+                                            {
+                                                this.state.TrueFalse.map((item, index)=>{
+                                                    return(
+                                                        <option value={item.value}>{item.label}</option>
+                                                    )
+                                                })
+                                            }
+                                        </Input>
                                     </Col>
-                                </FormGroup>
+                                </FormGroup>  
                                 <FormGroup row>
-                                    <Col md="3">
-                                        <Label htmlFor="FatherOcc-input">Mother</Label>
-                                    </Col>
-                                    <Col xs="12" md="9">
-                                        <Input type="text" id="FatherOcc-input" name="FatherOcc-input" placeholder="Mother Name" />
-                                        <FormText color="danger">Mother name is required</FormText>
-                                    </Col>
-                                </FormGroup>
-                                <FormGroup row>
-                                    <Col md="3">
-                                        <Label htmlFor="MotherOcc-input">Mother's Occupation</Label>
-                                    </Col>
-                                    <Col xs="12" md="9">
-                                        <Input type="text" id="MotherOcc-input" name="MotherOcc-input" placeholder="Mother's Occupation" />
-                                        <FormText color="danger">Mother's Occupation is required</FormText>
-                                    </Col>
-                                </FormGroup>
-                                <FormGroup row>
-                                    <Col md="3">
-                                        <Label htmlFor="Annual-input">Annual Income</Label>
-                                    </Col>
-                                    <Col xs="12" md="9">
-                                        <Input type="text" id="Annual-input" name="Annual-input" placeholder="Annual Income" />
-                                        <FormText color="danger">Annual Income is required</FormText>
-                                    </Col>
-                                </FormGroup>
-                                <FormGroup row>
-                                    <Col md="3">
-                                        <Label htmlFor="Category-input">Category</Label>
-                                    </Col>
-                                    <Col xs="12" md="9">
-                                        <Input type="text" id="Category-input" name="Category-input" placeholder="Category" />
-                                        <FormText color="danger">Category is required</FormText>
-                                    </Col>
-                                </FormGroup>                                
-                                <FormGroup row>
-                                    <Col md="3">
-                                        <Label htmlFor="BloodGroup-input">Blood Group</Label>
-                                    </Col>
-                                    <Col xs="12" md="9">
-                                        <Input type="text" id="BloodGroup-input" name="BloodGroup-input" placeholder="Blood Group" />
-                                        <FormText color="danger">Blood Group is required</FormText>
-                                    </Col>
-                                </FormGroup>
-                                <FormGroup row>
-                                    <Col md="3">
-                                        <Label htmlFor="stuphone-input">Student Phone</Label>
-                                    </Col>
-                                    <Col xs="12" md="9">
-                                        <Input type="tel" id="stuphone-input" name="stuphone-input" placeholder="Phone Number" />
-                                        <FormText color="danger">Student Phone is required</FormText>
-                                    </Col>
-                                </FormGroup>
-                                <FormGroup row>
-                                    <Col md="3">
-                                        <Label htmlFor="Photo-input">Photo</Label>
-                                    </Col>
-                                    <Col xs="12" md="9">
-                                        <UploadPreview></UploadPreview>
+                                    <Col md="12">
+                                        <Label color="grey">Details Of Mark Awarded in The +2 Or Equivalent Examination (If the Applicant has Passed Any Qualifying Exam Other Than +2 Government of Kerala Attested Copy Of The Relevant Mark List Should Also Be Attached)</Label>
                                     </Col>
                                 </FormGroup>
                             </Form>
+                            <FormGroup row>
+                                <Col md="4"><Label color="grey">Subject</Label></Col>
+                                <Col md="2"><Label color="grey">Marks Obtained</Label></Col>
+                                <Col md="2"><Label color="grey">Maximum Marks</Label></Col>
+                                <Col md="4"><Label color="grey">Grade</Label></Col>
+                            </FormGroup>
+                            <FormGroup row>
+                                <Col md="4"><Label color="grey">Part I-English</Label></Col>
+                                <Col md="2"><Label color="grey"></Label></Col>
+                                <Col md="2"><Label color="grey"></Label></Col>
+                                <Col md="4">
+                                    <Input type="select" name="LanguageUnderPart2" id="LanguageUnderPart2">
+                                        <option value="0">Please select</option>
+                                        {
+                                            this.state.GradeList.map((item, index)=>{
+                                                return(
+                                                    <option value={item.value}>{item.label}</option>
+                                                )
+                                            })
+                                        }
+                                    </Input>
+                                </Col>
+                            </FormGroup>
                         </CardBody>
                         <CardFooter>
                             <Button type="submit" size="sm" color="primary"><i className="fa fa-dot-circle-o"></i> Add Student</Button>{"  "}
