@@ -171,14 +171,14 @@ class MarkEntry extends Component {
                                                         <td>{index+1}</td>
                                                         <td>{item.StudentName}</td>
                                                         <td>{item.RollNo}</td>
-                                                        <td> <input type="text" class="form-control" /> </td>
-                                                        <td> <input type="text" class="form-control" /> </td>
-                                                        <td> <input type="text" class="form-control" /> </td>
-                                                        <td> <input type="text" class="form-control" /> </td>
-                                                        <td> <input type="text" class="form-control" /> </td>
-                                                        <td> <input type="text" class="form-control" /> </td>
-                                                        <td> <input type="text" class="form-control" /> </td>
-                                                        <td> <input type="text" class="form-control" /> </td>
+                                                        <td> <input type="text" class="form-control"/> </td>
+                                                        <td> <input type="text" class="form-control"/> </td>
+                                                        <td> <input type="text" class="form-control"/> </td>
+                                                        <td> <input type="text" class="form-control"/> </td>
+                                                        <td> <input type="text" class="form-control"/> </td>
+                                                        <td> <input type="text" class="form-control"/> </td>
+                                                        <td> <input type="text" class="form-control"/> </td>
+                                                        <td> <input type="text" class="form-control"/> </td>
                                                         <td><Button color="danger">Save</Button></td>
                                                     </tr>
                                                     )

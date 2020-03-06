@@ -30,6 +30,14 @@ import FeeDetails from './views/Department/FeeDetails';
 import SubjectDetails from './views/Department/SubjectDetails';
 import ExamGrades from './views/Examination/ExamGrades';
 import MarkEntry from './views/Examination/MarkEntry';
+import StudentInternalReport from './views/Examination/StudentInternalReport';
+import StudentOverallReport from './views/Examination/StudentOverallReport';
+import ClassWiseReport from './views/Examination/ClassWiseReport';
+import SubjectWiseReport from './views/Examination/SubjectWiseReport';
+import ManageRoutes from './views/Transport/ManageRoutes';
+import ManageVehicle from './views/Transport/ManageVehicle';
+import Alumni from './views/Alumni/Alumni';
+import ManageSMS from './views/SMS/ManageSMS';
 
 const Breadcrumbs = React.lazy(() => import('./views/Base/Breadcrumbs'));
 const Cards = React.lazy(() => import('./views/Base/Cards'));
@@ -142,6 +150,14 @@ const routes = [
   { path: '/department/subject', exact: true, name: 'SubjectDetails', component: SubjectDetails},
   { path: '/exam/grades', exact: true, name: 'ExamGrades', component: ExamGrades},
   { path: '/exam/mark_entry', exact: true, name: 'MarkEntry', component: MarkEntry},
+  { path: '/exam/internal_report', exact: true, name: 'StudentInternalReport', component: StudentInternalReport},
+  { path: '/exam/overall_internal_report', exact: true, name: 'StudentOverallReport', component: StudentOverallReport},
+  { path: '/exam/classwise_report', exact: true, name: 'ClassWiseReport', component: ClassWiseReport},
+  { path: '/exam/subject_report', exact: true, name: 'SubjectWiseReport', component: SubjectWiseReport},
+  { path: '/transport/routes', exact: true, name: 'ManageRoutes', component: ManageRoutes},
+  { path: '/transport/vehicles', exact: true, name: 'ManageVehicle', component: ManageVehicle},
+  { path: '/alumni', exact: true, name: 'Alumni', component: Alumni},
+  { path: '/sms', exact: true, name: 'ManageSMS', component: ManageSMS},
 ];
 
 export default routes;

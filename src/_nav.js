@@ -301,22 +301,22 @@ export default {
       children:[
         {
           name:'Routes',
-          url:'/exam/routes',
+          url:'/transport/routes',
           icon:'',
         },
         {
           name:'Vehicles',
-          url:'/exam/vehicles',
+          url:'/transport/vehicles',
           icon:'',
         },
         {
           name:'Vehicle Allotment',
-          url:'/exam/vehicle_allotment',
+          url:'/transport/vehicle_allotment',
           icon:'',
         },
         {
           name:'Fee Collection',
-          url:'/exam/fee_collection',
+          url:'/transport/fee_collection',
           icon:'',
         },
       ]
